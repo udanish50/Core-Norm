@@ -1,0 +1,46 @@
+{
+  "generated": "2026-08-13",
+  "method": "Core-Norm",
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "fc62fd43ce4cc84bad7b34b684b4e0433f19706143ff94ae46ad0ec9a6c83906",
+      "bytes": 819
+    },
+    {
+      "file": "classification_results.csv",
+      "sha256": "3d19a5f620b4e575711ea5df8f9424c0d54010d2b9445412060baa639b762838",
+      "bytes": 520002
+    },
+    {
+      "file": "classification_robustness_curve.csv",
+      "sha256": "c268ce71a5f2df018b5ceb48444a9be6405a25bfceb306521a0db09b01aff9a9",
+      "bytes": 1006
+    },
+    {
+      "file": "inverse_roundtrip.csv",
+      "sha256": "f79f43b53b571047f206081f16accacb46d19fc4d9812e3d47e52c776c60171f",
+      "bytes": 506
+    },
+    {
+      "file": "regression_results.csv",
+      "sha256": "8469edf5dadc2d52572927291b2bd21a3cd789da38372a12b8827058889ba77d",
+      "bytes": 430379
+    },
+    {
+      "file": "regression_robustness_curve.csv",
+      "sha256": "41617050159ac370e5916ca5e6d2d8faff6a25a901549b8a8cc5679ed15411e0",
+      "bytes": 971
+    },
+    {
+      "file": "summary.txt",
+      "sha256": "1da284880b0fd8a4a6e3e8430fdfd8514c7cbd678b1d3fdef2990436dfc56ac9",
+      "bytes": 10830
+    },
+    {
+      "file": "website_summary.json",
+      "sha256": "fc43bfd66a9ae1e1ac60bf846e8cee544c7511047965835095d10d3c433aa9c0",
+      "bytes": 1248
+    }
+  ]
+}

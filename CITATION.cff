@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use Core-Norm in research, please cite this software release until an archival paper is available."
+title: "Core-Norm"
+type: software
+authors:
+  - family-names: Danish
+    given-names: Muhammad Umair
+    orcid: "https://orcid.org/0009-0005-5728-3587"
+repository-code: "https://github.com/udanish50/Core-Norm"
+url: "https://umairdanish.com/research/core-norm/"
+version: 0.1.0
+date-released: 2026-08-13
+license: MIT
+keywords:
+  - normalization
+  - feature scaling
+  - machine learning
+  - robust preprocessing

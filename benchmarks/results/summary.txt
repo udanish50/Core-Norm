@@ -1,0 +1,168 @@
+
+classification_results.csv
+condition                                        method  bal_acc
+    clean                            Winsorized Z-score 0.838465
+    clean                                   Yeo-Johnson 0.838081
+    clean                                       Z-score 0.837850
+    clean                                     Core-Norm 0.837639
+    clean                               Quantile-Normal 0.834651
+    clean Core-Norm ablation — residual channel removed 0.833323
+    clean                                       Min-Max 0.832232
+    clean                                  RobustScaler 0.826334
+    clean                                    No scaling 0.816315
+ combined                               Quantile-Normal 0.566068
+ combined Core-Norm ablation — residual channel removed 0.562759
+ combined                                     Core-Norm 0.554078
+ combined                                   Yeo-Johnson 0.515541
+ combined                            Winsorized Z-score 0.514267
+ combined                                    No scaling 0.513608
+ combined                                  RobustScaler 0.512550
+ combined                                       Z-score 0.511245
+ combined                                       Min-Max 0.501460
+    drift                                     Core-Norm 0.822931
+    drift                                       Z-score 0.821931
+    drift Core-Norm ablation — residual channel removed 0.820381
+    drift                                       Min-Max 0.819389
+    drift                            Winsorized Z-score 0.818308
+    drift                                  RobustScaler 0.807530
+    drift                                    No scaling 0.797376
+    drift                               Quantile-Normal 0.784170
+    drift                                   Yeo-Johnson 0.767686
+missing10                                     Core-Norm 0.816919
+missing10 Core-Norm ablation — residual channel removed 0.814047
+missing10                                   Yeo-Johnson 0.812861
+missing10                                       Z-score 0.812666
+missing10                            Winsorized Z-score 0.812514
+missing10                               Quantile-Normal 0.810192
+missing10                                  RobustScaler 0.807875
+missing10                                       Min-Max 0.807245
+missing10                                    No scaling 0.787703
+ outlier1                                     Core-Norm 0.825435
+ outlier1 Core-Norm ablation — residual channel removed 0.823769
+ outlier1                            Winsorized Z-score 0.821461
+ outlier1                               Quantile-Normal 0.815521
+ outlier1                                   Yeo-Johnson 0.763355
+ outlier1                                       Z-score 0.752898
+ outlier1                                    No scaling 0.747649
+ outlier1                                  RobustScaler 0.746938
+ outlier1                                       Min-Max 0.736012
+outlier10                                     Core-Norm 0.755032
+outlier10 Core-Norm ablation — residual channel removed 0.734127
+outlier10                               Quantile-Normal 0.730314
+outlier10                                    No scaling 0.536259
+outlier10                                   Yeo-Johnson 0.518461
+outlier10                            Winsorized Z-score 0.516074
+outlier10                                       Z-score 0.514181
+outlier10                                  RobustScaler 0.512294
+outlier10                                       Min-Max 0.511902
+outlier20                                     Core-Norm 0.709993
+outlier20                               Quantile-Normal 0.677489
+outlier20 Core-Norm ablation — residual channel removed 0.674964
+outlier20                                    No scaling 0.500401
+outlier20                            Winsorized Z-score 0.477382
+outlier20                                   Yeo-Johnson 0.475544
+outlier20                                       Z-score 0.475536
+outlier20                                  RobustScaler 0.474362
+outlier20                                       Min-Max 0.470494
+ outlier5                                     Core-Norm 0.788870
+ outlier5 Core-Norm ablation — residual channel removed 0.782642
+ outlier5                               Quantile-Normal 0.765802
+ outlier5                                   Yeo-Johnson 0.613517
+ outlier5                            Winsorized Z-score 0.602176
+ outlier5                                    No scaling 0.600577
+ outlier5                                       Z-score 0.583942
+ outlier5                                  RobustScaler 0.583936
+ outlier5                                       Min-Max 0.567693
+     row5 Core-Norm ablation — residual channel removed 0.817673
+     row5                                     Core-Norm 0.816326
+     row5                               Quantile-Normal 0.815797
+     row5                            Winsorized Z-score 0.768720
+     row5                                       Z-score 0.762961
+     row5                                   Yeo-Johnson 0.762887
+     row5                                  RobustScaler 0.762689
+     row5                                    No scaling 0.746686
+     row5                                       Min-Max 0.720093
+
+regression_results.csv
+condition                                        method        r2
+    clean                            Winsorized Z-score  0.599914
+    clean                                     Core-Norm  0.595054
+    clean                                   Yeo-Johnson  0.588181
+    clean                               Quantile-Normal  0.582538
+    clean                                       Z-score  0.578178
+    clean Core-Norm ablation — residual channel removed  0.577308
+    clean                                       Min-Max  0.573847
+    clean                                  RobustScaler  0.568502
+    clean                                    No scaling  0.564717
+ combined                                  RobustScaler -0.001308
+ combined                                       Min-Max -0.002970
+ combined                                   Yeo-Johnson -0.024174
+ combined                                       Z-score -0.024789
+ combined                               Quantile-Normal -0.028280
+ combined Core-Norm ablation — residual channel removed -0.035339
+ combined                            Winsorized Z-score -0.039823
+ combined                                    No scaling -0.053736
+ combined                                     Core-Norm -0.064751
+    drift                                       Min-Max  0.484608
+    drift                            Winsorized Z-score  0.462734
+    drift                                     Core-Norm  0.461537
+    drift                                       Z-score  0.445119
+    drift                                  RobustScaler  0.439451
+    drift Core-Norm ablation — residual channel removed  0.438533
+    drift                                    No scaling  0.428089
+    drift                               Quantile-Normal  0.364709
+    drift                                   Yeo-Johnson  0.335526
+missing10                            Winsorized Z-score  0.506488
+missing10                                     Core-Norm  0.501603
+missing10                                   Yeo-Johnson  0.497781
+missing10                               Quantile-Normal  0.492520
+missing10                                  RobustScaler  0.487174
+missing10                                       Min-Max  0.486921
+missing10 Core-Norm ablation — residual channel removed  0.485334
+missing10                                       Z-score  0.482914
+missing10                                    No scaling  0.472298
+ outlier1                                     Core-Norm  0.552860
+ outlier1 Core-Norm ablation — residual channel removed  0.541697
+ outlier1                            Winsorized Z-score  0.540701
+ outlier1                               Quantile-Normal  0.521404
+ outlier1                                    No scaling  0.294386
+ outlier1                                       Min-Max  0.165779
+ outlier1                                       Z-score  0.155540
+ outlier1                                  RobustScaler  0.152447
+ outlier1                                   Yeo-Johnson -9.029678
+outlier10                                     Core-Norm  0.407123
+outlier10 Core-Norm ablation — residual channel removed  0.330947
+outlier10                               Quantile-Normal  0.294871
+outlier10                            Winsorized Z-score  0.046315
+outlier10                                    No scaling  0.031445
+outlier10                                       Min-Max  0.029564
+outlier10                                   Yeo-Johnson  0.028469
+outlier10                                       Z-score  0.027888
+outlier10                                  RobustScaler  0.024891
+outlier20                                     Core-Norm  0.298793
+outlier20 Core-Norm ablation — residual channel removed  0.161362
+outlier20                               Quantile-Normal  0.132031
+outlier20                            Winsorized Z-score -0.064976
+outlier20                                    No scaling -0.086541
+outlier20                                       Min-Max -0.093832
+outlier20                                   Yeo-Johnson -0.095473
+outlier20                                       Z-score -0.096371
+outlier20                                  RobustScaler -0.097879
+ outlier5                                     Core-Norm  0.470607
+ outlier5 Core-Norm ablation — residual channel removed  0.420268
+ outlier5                               Quantile-Normal  0.387122
+ outlier5                            Winsorized Z-score  0.219129
+ outlier5                                   Yeo-Johnson  0.197362
+ outlier5                                       Z-score  0.197347
+ outlier5                                       Min-Max  0.191770
+ outlier5                                    No scaling  0.186074
+ outlier5                                  RobustScaler  0.185794
+     row5                                     Core-Norm  0.532905
+     row5 Core-Norm ablation — residual channel removed  0.485575
+     row5                               Quantile-Normal  0.470662
+     row5                                       Min-Max  0.335818
+     row5                                   Yeo-Johnson  0.331467
+     row5                                       Z-score  0.329217
+     row5                                  RobustScaler  0.328056
+     row5                            Winsorized Z-score  0.327942
+     row5                                    No scaling  0.316036
