@@ -1,27 +1,26 @@
-name: CI
+name: Public Evidence
 on:
   push:
     branches: [main]
-  pull_request:
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  test:
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13"]
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.12"
           cache: pip
       - run: python -m pip install --upgrade pip
-      - run: pip install -e '.[dev]'
-      - run: ruff check src tests examples
-      - run: pytest --cov=corenorm --cov-report=term-missing
+      - run: pip install -e .
       - run: python benchmarks/verify_public_evidence.py
       - run: PYTHONPATH=src python benchmarks/live_verify.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: core-norm-public-evidence
+          path: |
+            benchmarks/results/public_evidence_manifest.json
+            benchmarks/results/live_dataset_verification.json

@@ -1,4 +1,5 @@
 """Core-Norm: bounded, asymmetric, invertible numeric feature preprocessing."""
+
 from __future__ import annotations
 
 import json
@@ -37,8 +38,9 @@ class CoreNorm(BaseEstimator, TransformerMixin):
     * A p-feature matrix is transformed to 2p features.
     """
 
-    def __init__(self, q: float = 0.95, tau_min: float = 1.5,
-                 tau_max: float = 3.0, eps: float = 1e-8):
+    def __init__(
+        self, q: float = 0.95, tau_min: float = 1.5, tau_max: float = 3.0, eps: float = 1e-8
+    ):
         self.q = q
         self.tau_min = tau_min
         self.tau_max = tau_max
@@ -69,7 +71,7 @@ class CoreNorm(BaseEstimator, TransformerMixin):
         if not hasattr(self, "median_"):
             raise NotFittedError("This CoreNorm instance is not fitted yet.")
 
-    def fit(self, X: Any, y: Any = None) -> "CoreNorm":
+    def fit(self, X: Any, y: Any = None) -> CoreNorm:
         """Fit Core-Norm statistics from training features only."""
         self._validate_params()
         arr = self._as_2d_float(X)
@@ -105,9 +107,7 @@ class CoreNorm(BaseEstimator, TransformerMixin):
 
     def _check_feature_count(self, arr: np.ndarray) -> None:
         if arr.shape[1] != self.n_features_in_:
-            raise ValueError(
-                f"Expected {self.n_features_in_} features, received {arr.shape[1]}."
-            )
+            raise ValueError(f"Expected {self.n_features_in_} features, received {arr.shape[1]}.")
 
     def _standardize(self, arr: np.ndarray) -> np.ndarray:
         return np.where(
@@ -159,9 +159,7 @@ class CoreNorm(BaseEstimator, TransformerMixin):
             a = e / (1.0 - e)
             distance = np.expm1(a)
             tau_grid = np.broadcast_to(self.tau_, residual.shape)
-            u[tail_mask] = np.sign(residual[tail_mask]) * (
-                tau_grid[tail_mask] + distance
-            )
+            u[tail_mask] = np.sign(residual[tail_mask]) * (tau_grid[tail_mask] + distance)
 
         out = np.where(
             u < 0.0,
@@ -202,7 +200,8 @@ class CoreNorm(BaseEstimator, TransformerMixin):
             "n_features_in": int(self.n_features_in_),
             "feature_names_in": (
                 [str(v) for v in self.feature_names_in_]
-                if hasattr(self, "feature_names_in_") else None
+                if hasattr(self, "feature_names_in_")
+                else None
             ),
             "median": self.median_.tolist(),
             "scale_lower": self.scale_lower_.tolist(),
@@ -211,7 +210,7 @@ class CoreNorm(BaseEstimator, TransformerMixin):
         }
 
     @classmethod
-    def from_state(cls, state: dict[str, Any]) -> "CoreNorm":
+    def from_state(cls, state: dict[str, Any]) -> CoreNorm:
         """Restore a fitted CoreNorm object from ``to_state`` output."""
         if state.get("method") != "Core-Norm" or state.get("schema_version") != 1:
             raise ValueError("Unsupported or invalid Core-Norm state.")
@@ -237,6 +236,6 @@ class CoreNorm(BaseEstimator, TransformerMixin):
         return target
 
     @classmethod
-    def load(cls, path: str | Path) -> "CoreNorm":
+    def load(cls, path: str | Path) -> CoreNorm:
         """Load fitted state created by ``save``."""
         return cls.from_state(json.loads(Path(path).read_text(encoding="utf-8")))

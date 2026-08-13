@@ -1,4 +1,5 @@
 import numpy as np
+
 from corenorm import CoreNorm
 
 

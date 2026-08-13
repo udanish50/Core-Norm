@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "method": "Core-Norm",
+  "total_saved_evaluations": 12150,
+  "files": [
+    {
+      "name": "classification_results.csv",
+      "rows": 6804,
+      "sha256": "3d19a5f620b4e575711ea5df8f9424c0d54010d2b9445412060baa639b762838",
+      "raw_url": "https://raw.githubusercontent.com/udanish50/Core-Norm/main/benchmarks/results/classification_results.csv",
+      "github_url": "https://github.com/udanish50/Core-Norm/blob/main/benchmarks/results/classification_results.csv"
+    },
+    {
+      "name": "regression_results.csv",
+      "rows": 5346,
+      "sha256": "8469edf5dadc2d52572927291b2bd21a3cd789da38372a12b8827058889ba77d",
+      "raw_url": "https://raw.githubusercontent.com/udanish50/Core-Norm/main/benchmarks/results/regression_results.csv",
+      "github_url": "https://github.com/udanish50/Core-Norm/blob/main/benchmarks/results/regression_results.csv"
+    }
+  ],
+  "note": "Archived Phase-1 result rows. The website filters and displays these files directly from the public GitHub repository."
+}

@@ -1,14 +1,27 @@
 # Core-Norm QA report
 
-Validation date: 2026-08-13
+Release preparation date: 2026-08-13
 
-- Python unit/property suite: **10 passed**.
-- Forward/inverse stress generation: **700,000 scalar values** across Gaussian, lognormal, Student-t, exponential, bimodal, zero-inflated and 5% contaminated distributions.
-- Worst archived absolute round-trip error in that stress run: **2.4374458007514477e-10**.
-- Python source/example/benchmark syntax: `compileall` passed after final fixes.
-- Naming audit: no public `CORE-full`, `CORE-body`, `CORENormV2`, or `CORE-Norm v2` labels remain.
-- Editable-install smoke test passed with the local environment using `--no-build-isolation`; normal CI installs from the declared `pyproject.toml`.
-- scikit-learn Pipeline smoke test is part of the unit suite.
-- NaN preservation, constant columns, invalid infinity, state serialization, boundedness, and positive-affine invariance are covered by tests.
+## Implementation
 
-The local sandbox did not contain Ruff and has no package-index network access, so Ruff itself was not executed locally. The GitHub Actions CI workflow runs Ruff on every push/pull request.
+- `pytest`: **12 passed**.
+- Python compilation: passed for `src/`, `tests/`, and `benchmarks/`.
+- Core-Norm remains the sole proposed method name throughout the public documentation.
+- Existing scikit-learn compatibility, serialization, feature naming, boundedness, affine-invariance, NaN/constant handling, and forward/inverse tests remain included.
+
+## Public evidence layer
+
+- Archived Phase-1 classification rows: **6,804**.
+- Archived Phase-1 regression rows: **5,346**.
+- Total archived evaluation rows: **12,150**.
+- Public verification datasets: **25**.
+- Live Python verification: **25/25 datasets passed** boundedness and inverse checks.
+- Worst relative inverse error across the 25 public verification datasets in this run: **2.79e-15**.
+- Every public dataset CSV is SHA-256 pinned in `benchmarks/datasets/manifest.json`.
+- The five canonical real datasets correspond to the scikit-learn datasets named in the archived benchmark.
+- Synthetic files are explicitly documented as deterministic replay fixtures for the same distribution families; they are not represented as byte-identical exploratory matrices.
+
+## CI
+
+- Main CI now verifies the public evidence manifest and reruns Core-Norm dataset property checks.
+- A dedicated `Public Evidence` GitHub Actions workflow is included and uploads the generated evidence ledger as an artifact.

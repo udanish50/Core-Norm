@@ -1,6 +1,7 @@
 from sklearn.datasets import load_diabetes
 from sklearn.linear_model import Ridge
 from sklearn.pipeline import make_pipeline
+
 from corenorm import CoreNorm
 
 

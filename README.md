@@ -123,6 +123,17 @@ The repository preserves the Phase-1 benchmark generated during method developme
 
 These are **preliminary internal benchmark results**, not a universal performance guarantee. The complete canonicalized evaluation tables are under [`benchmarks/results/`](benchmarks/results/), including clean data, missingness, drift, row-wise corruption, cell-wise corruption, several synthetic distribution families, and real scikit-learn datasets.
 
+## Public evidence and live verification
+
+The repository now exposes two complementary evidence layers for the public software page:
+
+1. **25 repository-hosted verification datasets.** The five real datasets are the canonical scikit-learn Iris, Wine, Breast Cancer Wisconsin, Digits, and Diabetes datasets corresponding to the real dataset names in the archived Phase-1 results. The remaining files are deterministic public replay fixtures for the same synthetic distribution families. Every file has a SHA-256 digest in [`benchmarks/datasets/manifest.json`](benchmarks/datasets/manifest.json).
+2. **All 12,150 archived Phase-1 evaluation rows.** The classification and regression CSVs are retained in full under [`benchmarks/results/`](benchmarks/results/), not only as summary averages. The website can load these files directly from GitHub and filter the recorded runs by dataset, condition, method, model, and seed.
+
+`benchmarks/live_verify.py` fits Core-Norm on the leading 70% of every published verification dataset, transforms the entire matrix, inverses it, and checks boundedness plus relative reconstruction error. The current checked-in ledger is [`benchmarks/results/live_dataset_verification.json`](benchmarks/results/live_dataset_verification.json).
+
+> **Provenance note.** The exploratory Phase-1 run preserved the result tables but did not preserve byte-identical generated synthetic matrices. The synthetic CSVs are therefore explicitly labeled *replay fixtures* rather than being misrepresented as the original random matrices. The canonical scikit-learn datasets are the same source datasets named in the archived benchmark.
+
 ## Verified round-trip
 
 `tests/test_roundtrip.py` verifies
